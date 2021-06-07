@@ -1,7 +1,14 @@
 import 'package:mobx/mobx.dart';
-import 'package:flutter/material.dart';
-part'comment_view_model.g.dart';
+part 'comment_view_model.g.dart';
 
 class CommentViewModel = _CommentViewModelBase with _$CommentViewModel;
 
-abstract class _CommentViewModelBase with Store {}
+abstract class _CommentViewModelBase with Store {
+  @observable
+  int count = 0;
+
+  @action
+  void increment() {
+    count++;
+  }
+}
